@@ -1,0 +1,143 @@
+:root{
+    --myColor: rgb(179, 139, 40);
+}
+
+.links{
+background-color: white;
+padding-bottom: 20px;
+margin: 0px;
+position: absolute;
+top: 0;
+
+}
+.navbar{
+ padding: 0!important;
+ background-image: url('fon3.png')!important;
+ height: 120vh;
+ position: relative;
+}
+.contactMain h5{
+   background-color: white;
+   border: 1px solid var(--myColor);
+   padding: 15px;
+   margin: 3px;
+   font-size: 20px;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+   color: var(--myColor);
+
+}
+.whiteBg{
+    padding: 1px;
+    text-align: center;
+    align-items: center;
+   background-color: white;
+   /* width: 120%; */
+  
+}
+#contactMain {
+    top: 60%;
+    position: absolute;
+    left: 44%!important;
+}
+.contact{
+    text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-family: 'Roboto';
+}
+.contact h5{
+ color: var(--myColor);
+ margin-top: 150px;
+}
+.contact p{
+font-size: 15px;
+margin-bottom: 50px;
+
+color: rgb(107, 105, 105);
+}
+.inputs {
+
+ display: flex;
+ flex-direction: column;
+ 
+ 
+}
+form{
+display: flex;
+flex-wrap: wrap;
+
+}
+.buton{
+    
+display: flex;
+flex-direction: column;
+}
+.inputs input{
+ margin: 5px;
+ padding: 5px;
+ border: 1px solid var(--myColor);
+}
+.inputs input:hover{
+    border: 2px solid var(--myColor);
+}
+.buton textarea{
+margin: 5px;
+border: 1px solid var(--myColor);
+}
+.buton textarea:hover{
+    border: 2px solid var(--myColor);
+}
+.buton button{
+margin: 5px;
+border: none;
+background-color: var(--myColor);
+color: white;
+transition: .5s;
+}
+.buton button:hover{
+background-color: rgb(114, 109, 68);
+}
+.flexMoskva{
+display: flex;
+margin-top: 50px;
+}
+.sank-peter{
+border-left: 1px solid var(--myColor);
+height: 50px;
+}
+.magazini{
+ margin-top: 50px;
+ text-align: center;
+}
+.flexMoskva p{
+padding: 10px;
+}
+@media only screen and (max-width: 450px) {
+    #contactMain {
+        top: 60%;
+        position: absolute;
+        left: 21%!important;
+    }
+    .contactMain {
+        
+        top: 60%;
+        position: absolute;
+        left: 34%;
+    }
+    .contact{
+    margin: 5px;
+    }
+   
+    form{
+      display: flow-root;
+       
+        }
+        .navbar{
+            background-position:center;
+            height: 90vh;
+            
+        }
+
+}

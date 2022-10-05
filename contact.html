@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="pinterest_board_photo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="forSale.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОНТАКТЫ</title>
+</head>
+<body x-data="forSale">
+    <div class="arrow">
+        <a href="#" title="Back to Top"><span class="fas fa-angle-up"></span></a>
+     </div>
+    <div class="navbar">
+        <content>
+
+            <menu>
+                <label for="trigger">
+                    <input id="trigger" type="checkbox" />
+                    <section class="drawer-list">
+                        <ul>
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="aboutUs.html">O нас</a></li>
+                            <li><a href="forSale.html">Аксессуары для дома</a></li>
+                            <li><a href="contact.html">Контакты</a></li>
+                        </ul>
+                    </section>
+                    <hamburger> <i></i>
+                        <text>
+
+                        </text>
+                    </hamburger>
+                </label>
+            </menu>
+        </content>
+        <!-- links -->
+        <div class="links">
+            <!-- a teglar -->
+            <div class="brand">
+                <a class="logo" href=""><img width="100"
+                        src="pinterest_board_photo.png"
+                        alt=""></a>
+                <a class="linksMain" href="index.html">Главная</a>
+                <a class="linksMain" href="aboutUs.html">O нас</a>
+                <a class="linksMain" href="forSale.html">Аксессуары для дома</a>
+                <a class="linksMain" href="contact.html">Контакты</a>
+
+            </div>
+            <!-- collapse -->
+
+            <div class="korzina">
+                <a class="btn " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight"><img width="50" src="shopping-bags.png" alt=""></a>
+                <span class="dona" x-text="cart.length"></span>
+                <div class="offcanvas offcanvas-end offcanvas-size-xl" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabel">Корзина</h5>
+             
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body ">
+                        <template x-for="cartItem in cart">
+                            <div class="karzinka-product">
+                                <!-- prod image -->
+                                <img width="60" :src="cartItem.image" alt="loading...">
+                        
+                                <div>
+                                    <p class="prodNom" x-text="cartItem.name"></p>
+                                    <p class="prodNarx"><span  x-text="`${cartItem.cost}$`"></span></p>
+                                </div>
+                                
+                                <div class="qoshish">
+    
+                                    <button @click="decreaseQT(cartItem.id)">-</button>
+                                    <p class="oshishi" x-text="cartItem.quantity"></p>
+                                    <button @click="increaseQT(cartItem.id)">+</button>
+                                </div>
+                                <p class="obshiySumma" x-text="`${cartItem.quantity * cartItem.cost}$`"></p>
+                                <button @click="removeFromCart(cartItem.id)" class="ochirish"><img width="20" src="https://cdn.onlinewebfonts.com/svg/img_216917.png" alt=""></button>
+                            </div>
+                        </template>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Заказать
+                          </button>
+                          
+                          <!-- Modal -->
+                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="staticBackdropLabel">Мы свяжемся с Вами в ближайшее время</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input placeholder="Имя" x-model="user.name_user" type="text">
+                                    <input placeholder="Фамилия" x-model="user.lastName_user" type="text">
+                                    <input placeholder="+998" x-model="user.phone_user" type="text">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрить</button>
+                                  <button @click="sendToEmail()" type="button" class="btn btn-primary">Заказать</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- contact h5 -->
+        <div id="contactMain" class="contactMain">
+            <div class="whiteBg">
+                <h5 >КОНТАКТЫ</h5>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="contact">
+        <h5>Мы воплотим в жизнь все ваши дизайнерские мечты</h5>
+        <p>Телефон: +998 (90)945 09 18  |  Email: vtabella941@gmail.com</p>
+       <div class="contactInp">
+            <div class="inputs">
+                <input x-model="contactUs.name" type="text" placeholder="Имя">
+                <input x-model="contactUs.email" type="email" placeholder="Ел.почта">
+                <input x-model="contactUs.phone" type="text" placeholder="Телефон">
+            </div>
+                <div class="buton">
+                <textarea x-model="contactUs.message" placeholder="Добавьте сообщение..." name="" id="" cols="30" rows="5"></textarea>
+                <button @click="contactUs.sendEmail()">Отправить</button></div>
+
+       
+       </div>
+       <div class="magazini">
+        <h6>НАШИ МАГАЗИНЫ</h6>
+        <div class="flexMoskva">
+            <div>
+                <h6>Ташкент</h6>
+                <p> Тошкент,Яккасарой,ул.Шота Руставелли-120</p>
+            </div>
+            <!-- <div class="sank-peter"> 
+                <h6>Ташкент</h6>
+                <p>ул. Арбат, 1а, Москва
+                    119019, Россия</p>
+            </div> -->
+        </div>
+       </div>
+    </div>
+
+    <div class="hrBorder">
+
+    </div>
+    <!-- footer -->
+    <div class="obshiySet">
+        <div class="sotSet">
+            <a href="https://instagram.com/bella_vita_tashkent?igshid=YmMyMTA2M2Y="><img width="35"
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                    alt=""></a>
+
+            <a href="https://t.me/BellaVita2021"> <img width="40"
+                    src="https://th.bing.com/th/id/R.10153b75c33e3acded3dbf93a6a42a7b?rik=d0XZtYKNLgvAFQ&riu=http%3a%2f%2fwww.vectorico.com%2fdownload%2fsocial_media%2fTelegram-Icon.png&ehk=oknJrkHcN8cGwt7BtxtnziBghPda9bwxoBRgiWXENbg%3d&risl=&pid=ImgRaw&r=0" alt=""></a>
+        </div>
+        <div class="forms">
+            <p>Подпишитесь на наши новости
+
+            </p>
+
+            <p class="studio">© 2022 Студия «Bella Vita». </p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('xkMYtLf2tE2AQXVk8')
+        })()
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+</html>

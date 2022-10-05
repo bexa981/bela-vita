@@ -1,0 +1,53 @@
+:root{
+    --myColor: rgb(179, 139, 40);
+}
+
+.navbar{
+    background-image: url('fon4.png')!important;
+}
+.aboutUs{
+text-align: center;
+display: flex;
+align-items: center;
+flex-direction: column;
+margin-top: 100px;
+}
+.aboutUs .textKop{
+ width: 60%;
+ color: gray;
+
+}
+.aboutUs div{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+.aboutUs h3{
+color:var(--myColor);
+font-family:'Courier New', Courier, monospace;
+font-weight: 500;
+}
+.charlz{
+ color: var(--myColor);
+ font-family: cursive;
+}
+@media only screen and (max-width: 450px) {
+    .aboutUs div{
+    width: 100%;
+    padding: 5px;
+    }
+    .aboutUs .textKop{
+        width: 100%;
+        padding: 5px;
+        color: gray;
+        font-size: 14px;
+       }
+       .navbar{
+        background-position: center;
+        height: 90vh;
+        
+    }
+
+}

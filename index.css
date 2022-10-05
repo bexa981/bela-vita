@@ -1,0 +1,318 @@
+:root{
+    --myColor: rgb(179, 139, 40);
+}
+.mask {
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 198, 28, 0.979);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mask>img {
+    width: 70%;
+    animation: loader 0.5s alternate-reverse infinite;
+}
+
+.hide {
+    opacity: 0;
+}
+.dona{
+    color: var(--myColor);
+    font-size: 17px;
+    font-weight: 700;
+
+}
+ 
+.brand{
+ display: flex;
+ justify-content: space-evenly;
+ width: 50%;
+ align-items: center;
+}
+.brand a{
+   margin-top: 20px;
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 200;
+    color: rgb(179, 139, 40);
+}
+.brand .linksMain:hover{
+ border-top: 2px solid rgb(207, 170, 75);
+ color: rgb(207, 170, 75);
+}
+.links {
+ align-items: center;
+ width: 100%;
+ display: flex;
+ justify-content: space-evenly;
+ 
+}
+.navbar {
+width: 100%;
+background-image: url('fon2.png');
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.borderDiv{
+    margin-top: 100px;
+    position: relative;
+    left: 15%;
+    border: 15px solid var(--myColor);
+    width: 70%;
+   text-align: center;
+}
+.borderDiv h2{
+    font-family: 'Lobster', cursive;
+    font-size: 47px;
+    color: var(--myColor);
+    padding: 10px;
+
+}
+.borderDiv h1{
+ font-size: 57px;
+ font-weight: bold;
+ padding: 10px;
+ color: var(--myColor);
+ padding-top: 20px;
+ z-index: 5;
+}
+.borderDiv button{
+width: 30%;
+padding: 5px;
+font-weight: bold;
+align-items: center;
+text-align: center;
+margin: 20px;
+border: 2px solid var(--myColor);
+color: var(--myColor);
+transition: .3s;
+background:transparent;
+}
+.borderDiv button:hover{
+ background-color: var(--myColor);
+ color: white;
+}
+.borderDiv .logo2{
+  margin: 20px;
+  font-weight: bold;
+  color: var(--myColor);
+}
+.qushChap{
+    top: 20%;
+ position: absolute;
+left: -25%;
+z-index: 2;
+width: 40%;
+
+}
+.qushOng{
+ position: absolute;
+ width: 30%;
+ top: 70%;
+ left: 80%;
+}
+.novinki{
+text-align: center;
+padding-top: 100px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.mainBody{
+width: 100%;
+align-items: center;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+.mahsulotlar {
+    width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ text-align: center;
+ padding: 10px;
+}
+.mahsulotlar p{
+  font-size: 20px;
+}
+.novinki h3{
+    font-family: 'Roboto';
+    color: var(--myColor);
+    position: relative;
+
+    
+}
+.novinki h3::before{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 45%;
+  border-bottom: 2px solid;
+  width: 10%;
+}
+.novinki p{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(87, 85, 85);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+width: 50%;
+text-align: center;
+}
+.mahsulotlar p{
+ color: var(--myColor);
+}
+.mainBody button{
+ padding: 5px;
+ margin: 20px;
+ margin-top: 100px;
+ border: 1px solid var(--myColor);
+ color: var(--myColor);
+ width: 20%;
+ transition: .3s;
+ background-color: white;
+}
+.mainBody button:hover{
+background-color: var(--myColor);
+color: white;
+}
+.hrBorder{
+width: 100%;
+border: 1px solid var(--myColor);
+margin-top: 100px;
+margin-bottom: 100px;
+}
+.sotSet{
+ text-align: center;
+ margin-bottom: 20px;
+}
+.sotSet a{
+ padding: 10px;
+
+}
+.forms{
+   
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ width: 100%;
+}
+.obshiySet{
+    padding-top: 50px;
+    height: 300px;
+    background-color: rgb(179, 139, 40,0.6);
+}
+.sotSet img{
+transition: 0.4s;
+}
+.sotSet img:hover{
+transform: scale(1.1);
+}
+.sotSet img:active{
+    transform: scale(0.9);
+    }
+.forms p{
+ color: black;
+ font-family: 'Lobster', cursive;
+}
+
+.logo img{
+    
+ border-radius: 50%;
+}
+
+.forms .studio{
+ font-size: 15px;
+ font-weight: bold;
+ font-family: 'Courier New', Courier, monospace;
+}
+
+.rasmLogo{
+ border-radius: 50%;
+}
+@media only screen and (max-width: 500px) {
+    .linksMain{
+    display: none;
+    }
+    .rasmLogo{
+    width: 100px;
+    
+    }
+    .korzina{
+     position: absolute;
+     right: 20%;
+    }
+.logo{
+    position: relative;
+   right: 50%;
+   
+}
+.borderDiv{
+ border: solid 6px rgb(224, 53, 53);
+ width: 70%;
+}
+    .borderDiv h1{
+     font-size: 25px;
+     color: rgb(224, 53, 53);
+    }
+    .borderDiv h2{
+     font-size: 25px;
+     color: rgb(224, 53, 53);
+    }
+    .borderDiv p{
+     color: rgb(224, 53, 53);
+    }
+    .borderDiv button{
+     border: 2px solid rgb(224, 53, 53);
+     color: rgb(224, 53, 53);
+    }
+    .borderDiv button:hover{
+     background-color:rgb(224, 53, 53) ;
+    }
+    .mahsulotlar div{
+      margin-left: 20px;
+    }
+    .mainBody button{
+     width: 50%;
+     
+    }
+    .forms input{
+     width: 70%;
+     padding: 10px;
+    }
+    .forms button{
+     width: 70%;
+     padding: 10px;
+    }
+}
+.arrow{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9;
+  }
+  .arrow a{
+    height: 39px;
+    width: 37px;
+    text-align: center;
+    background: #1b1b1b;
+    display: block;
+    border-radius: 3px;
+  }
+  .arrow a span{
+    color: #f2f2f2;
+    font-size: 25px;
+    line-height: 39px;
+    cursor: pointer;
+  }
