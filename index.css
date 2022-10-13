@@ -73,7 +73,7 @@ background-size: cover;
 }
 .borderDiv h2{
     font-family: 'Lobster', cursive;
-    font-size: 47px;
+    font-size: 35px;
     color: var(--myColor);
     padding: 10px;
 
@@ -101,6 +101,9 @@ background:transparent;
 .borderDiv button:hover{
  background-color: var(--myColor);
  color: white;
+}
+.logo2 p{
+ font-size: 25px;
 }
 .borderDiv .logo2{
   margin: 20px;

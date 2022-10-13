@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="pinterest_board_photo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="forSale.css">
     <link rel="stylesheet" href="hamburger.css">
     <link rel="stylesheet" href="contact.css">
@@ -17,13 +17,15 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>АКСЕССУАРЫ ДЛЯ ДОМА</title>
+    <meta name="description"
+        content="Новые подушки,Пакривал,Полотенца . Новые аксессуары для дома от Bella-Vita. - Bella-Vita">
+    <title>Аксессуары для дома – Дизайн от Bella-Vita - Bella-Vita</title>
 </head>
 
 <body x-data="forSale">
     <div class="arrow">
         <a href="#" title="Back to Top"><span class="fas fa-angle-up"></span></a>
-     </div>
+    </div>
     <div id="nav3" class="navbar ">
         <content>
 
@@ -36,6 +38,7 @@
                             <li><a href="aboutUs.html">O нас</a></li>
                             <li><a href="forSale.html">Аксессуары для дома</a></li>
                             <li><a href="contact.html">Контакты</a></li>
+                            <li><a href="dostavka.html">Доставка</a></li>
                         </ul>
                     </section>
                     <hamburger> <i></i>
@@ -55,6 +58,7 @@
                 <a class="linksMain" href="aboutUs.html">O нас</a>
                 <a class="linksMain" href="forSale.html">Аксессуары для дома</a>
                 <a class="linksMain" href="contact.html">Контакты</a>
+                <a class="linksMain" href="/dostavka.html">Доставка</a>
 
             </div>
             <!-- collapse -->
@@ -67,7 +71,7 @@
                     aria-labelledby="offcanvasRightLabel">
                     <div class="offcanvas-header">
                         <h5 id="offcanvasRightLabel">Корзина</h5>
-             
+
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
@@ -76,48 +80,55 @@
                             <div class="karzinka-product">
                                 <!-- prod image -->
                                 <img width="60" :src="cartItem.image" alt="loading...">
-                        
+
                                 <div>
                                     <p class="prodNom" x-text="cartItem.name"></p>
-                                    <p class="prodNarx"><span  x-text="`${cartItem.cost}$`"></span></p>
+                                    <p class="prodNarx"><span x-text="`${cartItem.cost}$`"></span></p>
                                 </div>
-                                
+
                                 <div class="qoshish">
-    
+
                                     <button @click="decreaseQT(cartItem.id)">-</button>
                                     <p class="oshishi" x-text="cartItem.quantity"></p>
                                     <button @click="increaseQT(cartItem.id)">+</button>
                                 </div>
                                 <p class="obshiySumma" x-text="`${cartItem.quantity * cartItem.cost}$`"></p>
-                                <button @click="removeFromCart(cartItem.id)" class="ochirish"><img width="20" src="https://cdn.onlinewebfonts.com/svg/img_216917.png" alt=""></button>
+                                <button @click="removeFromCart(cartItem.id)" class="ochirish"><img width="20"
+                                        src="https://cdn.onlinewebfonts.com/svg/img_216917.png" alt=""></button>
                             </div>
                         </template>
                         <p x-text="``"></p>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop">
                             Заказать
-                          </button>
-                          
-                          <!-- Modal -->
-                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="staticBackdropLabel">Мы свяжемся с Вами в ближайшее время</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Мы свяжемся с Вами в ближайшее
+                                            время</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input placeholder="Имя" x-model="user.name_user" type="text">
+                                        <input placeholder="Фамилия" x-model="user.lastName_user" type="text">
+                                        <input placeholder="+998" x-model="user.phone_user" type="text">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Закрить</button>
+                                        <button @click="sendToEmail()" type="button"
+                                            class="btn btn-primary">Заказать</button>
+                                    </div>
                                 </div>
-                                <div class="modal-body">
-                                    <input placeholder="Имя" x-model="user.name_user" type="text">
-                                    <input placeholder="Фамилия" x-model="user.lastName_user" type="text">
-                                    <input placeholder="+998" x-model="user.phone_user" type="text">
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрить</button>
-                                  <button @click="sendToEmail()" type="button" class="btn btn-primary">Заказать</button>
-                                </div>
-                              </div>
                             </div>
-                          </div>
-                        
+                        </div>
+
                     </div>
                 </div>
 
@@ -136,9 +147,10 @@
     <div class="forSaleMain">
         <!-- main text top -->
         <div class="textMain">
-            <p>Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды, чтобы добавить
-                свой текст и настроить шрифт. Вы можете переместить его в любое место на странице. Расскажите
-                посетителям сайта о себе.</p>
+            <p>Круглосуточное оформление заказов
+
+                Вы можете самостоятельно оформить заявку на заказ в любое время суток. В рабочее время менеджеры
+                обработают заявку, и перезвонят Вам, подтверждая тем самым его окончательное оформление..</p>
         </div>
         <!-- maxsulotlar -->
         <div id="products-list" class="products">
@@ -150,10 +162,10 @@
                     </div>
                     <div class="product-fullInfo">
 
-                        <div >
+                        <div>
                             <p x-text="product.name"></p>
                             <p x-text="`${product.cost} $`"></p>
-    
+
                         </div>
                         <button @click="savatgaOlish(product.id)">Выбрать</button>
                     </div>
@@ -169,11 +181,11 @@
     <div class="obshiySet">
         <div class="sotSet">
             <a href="https://instagram.com/bella_vita_tashkent?igshid=YmMyMTA2M2Y="><img width="35"
-                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                    alt=""></a>
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt=""></a>
 
             <a href="https://t.me/BellaVita2021"> <img width="40"
-                    src="https://th.bing.com/th/id/R.10153b75c33e3acded3dbf93a6a42a7b?rik=d0XZtYKNLgvAFQ&riu=http%3a%2f%2fwww.vectorico.com%2fdownload%2fsocial_media%2fTelegram-Icon.png&ehk=oknJrkHcN8cGwt7BtxtnziBghPda9bwxoBRgiWXENbg%3d&risl=&pid=ImgRaw&r=0" alt=""></a>
+                    src="https://th.bing.com/th/id/R.10153b75c33e3acded3dbf93a6a42a7b?rik=d0XZtYKNLgvAFQ&riu=http%3a%2f%2fwww.vectorico.com%2fdownload%2fsocial_media%2fTelegram-Icon.png&ehk=oknJrkHcN8cGwt7BtxtnziBghPda9bwxoBRgiWXENbg%3d&risl=&pid=ImgRaw&r=0"
+                    alt=""></a>
         </div>
         <div class="forms">
             <p>Подпишитесь на наши новости
@@ -183,11 +195,11 @@
             <p class="studio">© 2022 Студия «Bella Vita». </p>
         </div>
     </div>
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             emailjs.init('xkMYtLf2tE2AQXVk8')
         })()
     </script>
@@ -199,7 +211,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

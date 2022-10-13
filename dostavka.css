@@ -1,0 +1,93 @@
+#contactMain{
+    position: absolute;
+    left: 60%!important;
+    }
+    #navbar{
+     background-image: url('https://i.pinimg.com/originals/2e/dc/5d/2edc5d2627f889efe21ef64994be119d.jpg')!important;
+    }
+    .dostavkaMain h1{
+     text-align: center;
+     margin-top: 50px;
+     margin-bottom: 40px;
+     font-family: 'oswald';
+    }
+    .topInfo{
+        margin-bottom: 20px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+     width: 100%;
+     padding-top: 30px;
+     padding-bottom: 30px;
+     background-color: rgb(215, 236, 238);
+    }
+    .topInfo .pTop{
+     width: 200px;
+     font-family: 'Kalam', cursive;
+    }
+    .topInfo p{
+        font-family: 'Kalam', cursive;
+    }
+    .topInfo .still{
+        font-family: 'Kalam', cursive;
+    }
+    .raqamlar{
+     font-family: 'oswald';
+    }
+    .whatsap{
+     margin-top: 25px;
+     margin-left: -60px;
+    }
+  
+    
+    .opshiyDelivery{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-around;
+    }
+    .deliveryInfo{
+    width: 50%;
+    margin-top: 100px;
+    font-family: 'oswald';
+    }
+    .deliveryInfo h5{
+     text-align: center;
+    }
+    .topInfo button{
+     padding: 5px;
+     border: 2px solid var(--myColor);
+     background-color: white;
+     transition: .4s;
+     font-weight: bold;
+     border-radius: 5px;
+    
+    }
+    .topInfo button:hover{
+     background-color: var(--myColor);
+     color: white;
+    }
+    .topInfo button:active{
+     transform: scale(.9);
+    }
+    :root{
+        --myColor: rgb(179, 139, 40);
+        --kokrang: rgb(215, 236, 238);
+    }
+    @media only screen and (max-width: 450px) {
+        .topInfo{
+         padding: 10px;
+        }
+        .topInfo button{
+        margin: 30px;
+        }
+        #contactMain {
+           margin-left: 10%;
+        }
+        .deliveryInfo{
+         width: 70%;
+        }
+    }
+    
+   

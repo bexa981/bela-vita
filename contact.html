@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="pinterest_board_photo.png" type="image/x-icon">
@@ -33,6 +33,7 @@
                             <li><a href="aboutUs.html">O нас</a></li>
                             <li><a href="forSale.html">Аксессуары для дома</a></li>
                             <li><a href="contact.html">Контакты</a></li>
+                            <li><a href="/dostavka.html">Доставка</a></li>
                         </ul>
                     </section>
                     <hamburger> <i></i>
@@ -50,10 +51,11 @@
                 <a class="logo" href=""><img width="100"
                         src="pinterest_board_photo.png"
                         alt=""></a>
-                <a class="linksMain" href="index.html">Главная</a>
-                <a class="linksMain" href="aboutUs.html">O нас</a>
-                <a class="linksMain" href="forSale.html">Аксессуары для дома</a>
-                <a class="linksMain" href="contact.html">Контакты</a>
+                        <a class="linksMain" href="index.html">Главная</a>
+                        <a class="linksMain" href="aboutUs.html">O нас</a>
+                        <a class="linksMain" href="forSale.html">Аксессуары для дома</a>
+                        <a class="linksMain" href="contact.html">Контакты</a>
+                        <a class="linksMain" href="/dostavka.html">Доставка</a>
 
             </div>
             <!-- collapse -->
@@ -135,9 +137,9 @@
         <p>Телефон: +998 (90)945 09 18  |  Email: vtabella941@gmail.com</p>
        <div class="contactInp">
             <div class="inputs">
-                <input x-model="contactUs.name" type="text" placeholder="Имя">
-                <input x-model="contactUs.email" type="email" placeholder="Ел.почта">
-                <input x-model="contactUs.phone" type="text" placeholder="Телефон">
+                <input x-model="contactUs.name" type="text" placeholder="Имя" required="required">
+                <input x-model="contactUs.email" type="email" placeholder="Ел.почта" required="required">
+                <input x-model="contactUs.phone" type="text" placeholder="Телефон" required="required">
             </div>
                 <div class="buton">
                 <textarea x-model="contactUs.message" placeholder="Добавьте сообщение..." name="" id="" cols="30" rows="5"></textarea>
@@ -152,11 +154,7 @@
                 <h6>Ташкент</h6>
                 <p> Тошкент,Яккасарой,ул.Шота Руставелли-120</p>
             </div>
-            <!-- <div class="sank-peter"> 
-                <h6>Ташкент</h6>
-                <p>ул. Арбат, 1а, Москва
-                    119019, Россия</p>
-            </div> -->
+           
         </div>
        </div>
     </div>
