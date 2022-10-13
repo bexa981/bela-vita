@@ -3,7 +3,11 @@
 }
 
 #navbar1{
-    background-image: url('fon4.png')!important;
+
+    background-image: url('https://weberhof.ru/uploads/slides/56_slide.png')!important;
+}
+.navbari{
+ background-position: right;
 }
 .aboutUs{
 text-align: center;
@@ -28,6 +32,9 @@ margin-top: 100px;
 color:var(--myColor);
 font-family:'Courier New', Courier, monospace;
 font-weight: 500;
+}
+.magazin{
+margin-left: -10%;
 }
 .charlz{
  color: var(--myColor);
